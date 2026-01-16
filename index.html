@@ -163,6 +163,50 @@
   <div class="logo">Google Ads Pro</div>
   <a href="#audit" class="btn btn-primary">Получить аудит</a>
 </header>
+    /* STEPS SECTION (COLORED LIKE HERO) */
+    .steps-section {
+      background: linear-gradient(135deg, #6d6adb, #7b5fc0);
+      color: #fff;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .steps-section h2 {
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .step-card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 30px 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    .step-card span {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      color: #6d6adb;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .step-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
 
 <section class="hero">
   <h1>Превратите Google Ads из расхода в источник стабильных продаж</h1>
@@ -174,10 +218,10 @@
 </section>
 
 <div class="stats">
-  <div class="stat"><strong>7+</strong><span>лет опыта</span></div>
+  <div class="stat"><strong>15+</strong><span>лет опыта</span></div>
   <div class="stat"><strong>150+</strong><span>успешных проектов</span></div>
   <div class="stat"><strong>-40%</strong><span>средняя экономия бюджета</span></div>
-  <div class="stat"><strong>3x</strong><span>рост конверсий</span></div>
+  <div class="stat"><strong>2x</strong><span>рост конверсий</span></div>
 </div>
 
 <section>
@@ -227,15 +271,28 @@
   </div>
 </section>
 
-<section>
+<section class="steps-section">
   <h2>Как мы работаем</h2>
   <div class="steps">
-    <div class="step"><strong>1</strong>Анализ</div>
-    <div class="step"><strong>2</strong>Стратегия</div>
-    <div class="step"><strong>3</strong>Запуск</div>
-    <div class="step"><strong>4</strong>Оптимизация</div>
+    <div class="step-card">
+      <span>1</span>
+      <h3>Анализ</h3>
+    </div>
+    <div class="step-card">
+      <span>2</span>
+      <h3>Стратегия</h3>
+    </div>
+    <div class="step-card">
+      <span>3</span>
+      <h3>Запуск</h3>
+    </div>
+    <div class="step-card">
+      <span>4</span>
+      <h3>Оптимизация</h3>
+    </div>
   </div>
 </section>
+
 
 <section id="audit">
   <h2>Почему выбирают нас</h2>
