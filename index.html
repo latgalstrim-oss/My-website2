@@ -14,7 +14,6 @@
     }
     a { text-decoration: none; color: inherit; }
 
-    /* HEADER */
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
@@ -22,47 +21,41 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+
     .logo {
       font-weight: 700;
       color: #2563eb;
     }
+
     .btn {
       padding: 12px 20px;
       border-radius: 8px;
       font-weight: 600;
       display: inline-block;
     }
-    .btn-primary {
-      background: #2563eb;
-      color: #fff;
-    }
-    .btn-secondary {
-      border: 2px solid #fff;
-      color: #fff;
-    }
-    .btn-green {
-      background: #22c55e;
-      color: #fff;
-    }
 
-    /* HERO */
+    .btn-primary { background: #2563eb; color: #fff; }
+    .btn-secondary { border: 2px solid #fff; color: #fff; }
+    .btn-green { background: #22c55e; color: #fff; }
+
     .hero {
       background: linear-gradient(135deg, #6d6adb, #7b5fc0);
       color: #fff;
       text-align: center;
       padding: 100px 20px;
     }
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
+
+    .hero h1 { font-size: 42px; margin-bottom: 20px; }
     .hero p {
       max-width: 700px;
       margin: 0 auto 40px;
       font-size: 18px;
-      opacity: 0.95;
     }
+
     .hero-buttons {
       display: flex;
       justify-content: center;
@@ -70,7 +63,6 @@
       flex-wrap: wrap;
     }
 
-    /* STATS */
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -78,27 +70,22 @@
       padding: 60px 40px;
       text-align: center;
     }
-    .stat strong {
-      font-size: 28px;
-      color: #2563eb;
-    }
-    .stat span {
-      display: block;
-      color: #6b7280;
-      margin-top: 5px;
-    }
 
-    /* SECTIONS */
+    .stat strong { font-size: 28px; color: #2563eb; }
+    .stat span { display: block; color: #6b7280; margin-top: 5px; }
+
     section {
       padding: 80px 40px;
       max-width: 1200px;
       margin: auto;
     }
+
     section h2 {
       text-align: center;
       font-size: 32px;
       margin-bottom: 20px;
     }
+
     section p.section-desc {
       text-align: center;
       color: #6b7280;
@@ -106,66 +93,24 @@
       margin: 0 auto 60px;
     }
 
-    /* CARDS */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
+
     .card {
       background: #fff;
       border-radius: 16px;
       padding: 30px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-    .card ul {
-      margin-top: 15px;
-      padding-left: 20px;
-    }
-    .card ul li {
-      margin-bottom: 8px;
-    }
 
-    /* STEPS */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .step {
-      text-align: center;
-      padding: 20px;
-    }
-    .step strong {
-      display: block;
-      font-size: 28px;
-      color: #2563eb;
-      margin-bottom: 10px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #f9fafb;
-      padding: 40px;
-      text-align: center;
-      color: #6b7280;
-    }
-        /* STEPS SECTION (COLORED LIKE HERO) */
     .steps-section {
       background: linear-gradient(135deg, #6d6adb, #7b5fc0);
       color: #fff;
       padding: 100px 40px;
       text-align: center;
-    }
-
-    .steps-section h2 {
-      font-size: 32px;
-      margin-bottom: 50px;
     }
 
     .steps {
@@ -179,8 +124,7 @@
     .step-card {
       background: rgba(255,255,255,0.15);
       border-radius: 16px;
-      padding: 30px 20px;
-      backdrop-filter: blur(6px);
+      padding: 30px;
     }
 
     .step-card span {
@@ -195,34 +139,36 @@
       margin-bottom: 15px;
     }
 
-    .step-card h3 {
-      font-size: 18px;
-      font-weight: 600;
+    footer {
+      background: #f9fafb;
+      padding: 40px;
+      text-align: center;
+      color: #6b7280;
     }
-/* ===== SCROLL ANIMATIONS ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.7s ease;
+    }
 
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="logo">Google Ads Pro</div>
   <a href="#audit" class="btn btn-primary">Получить аудит</a>
 </header>
-    
+
 <section class="hero">
   <h1>Превратите Google Ads из расхода в источник стабильных продаж</h1>
-  <p>Профессиональная настройка и оптимизация рекламных кампаний для малого и среднего бизнеса в Европе и США</p>
+  <p>Профессиональная настройка и оптимизация рекламных кампаний</p>
   <div class="hero-buttons">
     <a href="#audit" class="btn btn-green">Получить бесплатный аудит</a>
     <a href="#services" class="btn btn-secondary">Узнать больше</a>
@@ -231,105 +177,52 @@
 
 <div class="stats">
   <div class="stat"><strong>15+</strong><span>лет опыта</span></div>
-  <div class="stat"><strong>150+</strong><span>успешных проектов</span></div>
-  <div class="stat"><strong>-40%</strong><span>средняя экономия бюджета</span></div>
-  <div class="stat"><strong>2x</strong><span>рост конверсий</span></div>
+  <div class="stat"><strong>150+</strong><span>проектов</span></div>
+  <div class="stat"><strong>-40%</strong><span>экономия</span></div>
+  <div class="stat"><strong>2x</strong><span>рост</span></div>
 </div>
 
 <section class="reveal">
-
   <h2>Знакомые проблемы?</h2>
-  <p class="section-desc">Большинство малых и средних компаний сталкиваются с одними и теми же проблемами в Google Ads</p>
-
+  <p class="section-desc">Типичные сложности Google Ads</p>
   <div class="grid">
-    <div class="card"><h3>💸 Бюджет тратится впустую</h3><p>Деньги уходят на нецелевые запросы и неэффективные ключевые слова.</p></div>
-    <div class="card"><h3>📉 Низкая конверсия</h3><p>Стоимость лида растет, а качество падает.</p></div>
-    <div class="card"><h3>🎯 Непонятная аналитика</h3><p>Отсутствует корректная настройка отслеживания конверсий.</p></div>
-    <div class="card"><h3>⏰ Нет времени разбираться</h3><p>Вам нужно заниматься бизнесом, а не рекламными кабинетами.</p></div>
+    <div class="card">💸 Бюджет впустую</div>
+    <div class="card">📉 Низкая конверсия</div>
+    <div class="card">🎯 Плохая аналитика</div>
+    <div class="card">⏰ Нет времени</div>
   </div>
-
+</section>
 
 <section id="services" class="reveal">
-
-  <h2>Комплексные решения для вашего бизнеса</h2>
-  <p class="section-desc">От настройки до масштабирования — полный цикл работы с Google Ads</p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>🚀 Настройка с нуля</h3>
-      <ul>
-        <li>Анализ ниши и конкурентов</li>
-        <li>Подбор ключевых слов</li>
-        <li>Создание структуры кампаний</li>
-        <li>Продающие объявления</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>📊 Оптимизация и масштабирование</h3>
-      <ul>
-        <li>Аудит кампаний</li>
-        <li>A/B тесты</li>
-        <li>Оптимизация ставок</li>
-        <li>Рост заявок</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>🎨 Посадочные страницы</h3>
-      <ul>
-        <li>CRO-дизайн</li>
-        <li>Core Web Vitals</li>
-        <li>Адаптивность</li>
-        <li>Продающие офферы</li>
-      </ul>
-    </div>
-  </div>
+  <h2>Комплексные решения</h2>
+  <p class="section-desc">Полный цикл Google Ads</p>
 </section>
 
 <section class="steps-section">
   <h2>Как мы работаем</h2>
   <div class="steps">
-    <div class="step-card">
-      <span>1</span>
-      <h3>Анализ</h3>
-    </div>
-    <div class="step-card">
-      <span>2</span>
-      <h3>Стратегия</h3>
-    </div>
-    <div class="step-card">
-      <span>3</span>
-      <h3>Запуск</h3>
-    </div>
-    <div class="step-card">
-      <span>4</span>
-      <h3>Оптимизация</h3>
-    </div>
+    <div class="step-card"><span>1</span>Анализ</div>
+    <div class="step-card"><span>2</span>Стратегия</div>
+    <div class="step-card"><span>3</span>Запуск</div>
+    <div class="step-card"><span>4</span>Рост</div>
   </div>
 </section>
 
-
 <section id="audit">
   <h2>Почему выбирают нас</h2>
-  <p class="section-desc">Мы работаем на результат, а не на процесс</p>
 </section>
 
-<footer>
-  © Google Ads Pro
-</footer>
+<footer>© Google Ads Pro</footer>
+
 <script>
   const reveals = document.querySelectorAll('.reveal');
-
   const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-
     reveals.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 80) {
+      if (el.getBoundingClientRect().top < window.innerHeight - 80) {
         el.classList.add('active');
       }
     });
   };
-
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
 </script>
