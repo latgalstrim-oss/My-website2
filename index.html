@@ -1,316 +1,866 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Google Ads Pro — больше заявок, меньше расходов</title>
-  <meta name="description" content="Профессиональная настройка и оптимизация Google Ads. Больше заявок, ниже стоимость лида. Работаем в Европе и США." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Профессиональная настройка и оптимизация Google Ads для малого и среднего бизнеса. Увеличьте продажи и снизьте стоимость лида.">
+    <title>Google Ads для вашего бизнеса | Настройка и оптимизация рекламы</title>
+    
+    <!-- Google Tag Manager Placeholder -->
+    <script>
+        // GTM Code: Replace GTM-XXXXXXX with your container ID
+        // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        // new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        // j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        // 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        // })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
+    
+    <!-- GA4 Placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        // window.dataLayer = window.dataLayer || [];
+        // function gtag(){dataLayer.push(arguments);}
+        // gtag('js', new Date());
+        // gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
-  <style>
-    /* ===== RESET ===== */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html {
-      scroll-behavior: smooth;
-      scroll-snap-type: y proximity;
-    }
-    body {
-      font-family: Inter, Arial, sans-serif;
-      background: #0b0b0c;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
+    <style>
+        /* CSS Variables for easy customization */
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
 
-    /* ===== HEADER ===== */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: rgba(11,11,12,0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .logo { font-weight: 700; }
-    .langs a {
-      margin-left: 14px;
-      opacity: 0.6;
-      font-weight: 600;
-    }
-    .langs a.active {
-      opacity: 1;
-      border-bottom: 2px solid #6d6adb;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* ===== HERO ===== */
-    .hero {
-      scroll-snap-align: start;
-      min-height: 90vh;
-      padding: 120px 40px;
-      background: radial-gradient(80% 80% at 50% 20%, #1a1a2e 0%, #0b0b0c 60%);
-    }
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 56px);
-      max-width: 900px;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      max-width: 640px;
-      font-size: 18px;
-      opacity: 0.85;
-      margin-bottom: 40px;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 14px 26px;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #6d6adb, #7b5fc0);
-    }
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(109,106,219,0.35);
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    /* ===== STATS ===== */
-    .stats {
-      scroll-snap-align: start;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
-      gap: 30px;
-      padding: 80px 40px;
-      text-align: center;
-    }
-    .stat strong {
-      font-size: 32px;
-      color: #6d6adb;
-    }
-    .stat span {
-      display: block;
-      opacity: 0.7;
-      margin-top: 6px;
-    }
+        /* Header & Navigation */
+        header {
+            background: var(--bg-white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* ===== SECTIONS ===== */
-    section {
-      scroll-snap-align: start;
-      padding: 100px 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 16px;
-    }
-    .section-desc {
-      text-align: center;
-      opacity: 0.7;
-      max-width: 720px;
-      margin: 0 auto 60px;
-    }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* ===== CARDS ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-      gap: 30px;
-    }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border-radius: 18px;
-      padding: 28px;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    }
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-    .card ul {
-      padding-left: 18px;
-      margin-top: 12px;
-    }
-    .card li {
-      margin-bottom: 8px;
-      opacity: 0.85;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
 
-    /* ===== STEPS ===== */
-    .steps-section {
-      scroll-snap-align: start;
-      background: linear-gradient(135deg, #6d6adb, #7b5fc0);
-      text-align: center;
-      padding: 120px 40px;
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .step-card {
-      background: rgba(255,255,255,0.15);
-      border-radius: 16px;
-      padding: 30px 20px;
-      backdrop-filter: blur(6px);
-    }
-    .step-card span {
-      display: inline-block;
-      width: 46px;
-      height: 46px;
-      line-height: 46px;
-      border-radius: 50%;
-      background: #fff;
-      color: #6d6adb;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 40px;
-      text-align: center;
-      opacity: 0.5;
-    }
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
 
-    /* ===== SCROLL REVEAL ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all .7s ease;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-      header { padding: 16px 20px; }
-      .hero { padding: 100px 20px; }
-      section { padding: 80px 20px; }
-    }
-  </style>
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--bg-white);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .trust-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .trust-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .trust-label {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid #ef4444;
+        }
+
+        .pain-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .pain-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+        }
+
+        .service-features li::before {
+            content: "✓ ";
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Process Section */
+        .process {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-box {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 500px;
+            margin: 2rem auto;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Cookie Consent (GDPR) */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--text-dark);
+            color: white;
+            padding: 1.5rem;
+            display: none;
+            z-index: 9999;
+            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookie-consent.show {
+            display: block;
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cookie-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-accept {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .cookie-decline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .trust-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 
-<header>
-  <div class="logo">Google Ads Pro</div>
-  <div class="langs">
-    <a href="index.html" class="active">RU</a>
-    <a href="en.html">EN</a>
-    <a href="de.html">DE</a>
-  </div>
-</header>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Google Ads Pro</div>
+            <a href="#contact" class="nav-cta">Получить аудит</a>
+        </nav>
+    </header>
 
-<section class="hero reveal">
-  <h1>Больше заявок из Google Ads</h1>
-  <p>Настраиваем рекламу под результат, а не клики. Работаем с малым и средним бизнесом в Европе и США.</p>
-  <div class="hero-buttons">
-    <a href="#audit" class="btn btn-primary">Получить аудит</a>
-    <a href="#services" class="btn btn-secondary">Узнать больше</a>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in-up">
+            <h1>Превратите Google Ads из расхода в источник стабильных продаж</h1>
+            <p class="hero-subtitle">Профессиональная настройка и оптимизация рекламных кампаний для малого и среднего бизнеса в Европе и США</p>
+            <div class="cta-group">
+                <a href="#contact" class="cta-primary" onclick="trackEvent('cta_click', 'hero_primary')">Получить бесплатный аудит</a>
+                <a href="#services" class="cta-secondary">Узнать больше</a>
+            </div>
+        </div>
+    </section>
 
-<div class="stats reveal">
-  <div class="stat"><strong>15+</strong><span>лет опыта</span></div>
-  <div class="stat"><strong>150+</strong><span>проектов</span></div>
-  <div class="stat"><strong>-40%</strong><span>экономия бюджета</span></div>
-  <div class="stat"><strong>2x</strong><span>рост заявок</span></div>
-</div>
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-content">
+            <div class="trust-item">
+                <span class="trust-number">15+</span>
+                <span class="trust-label">лет опыта</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">150+</span>
+                <span class="trust-label">успешных проектов</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">-40%</span>
+                <span class="trust-label">средняя экономия бюджета</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">x2</span>
+                <span class="trust-label">рост конверсий</span>
+            </div>
+        </div>
+    </section>
 
-<section class="reveal">
-  <h2>Знакомые проблемы?</h2>
-  <p class="section-desc">Мы видим их каждый день у 9 из 10 клиентов</p>
-  <div class="grid">
-    <div class="card"><h3>💸 Бюджет уходит впустую</h3><p>Нецелевые запросы и слабая структура.</p></div>
-    <div class="card"><h3>📉 Низкая конверсия</h3><p>Дорого, а заявок мало.</p></div>
-    <div class="card"><h3>📊 Нет аналитики</h3><p>Непонятно, что реально работает.</p></div>
-    <div class="card"><h3>⏰ Нет времени</h3><p>Бизнес важнее рекламных кабинетов.</p></div>
-  </div>
-</section>
+    <!-- Pain Points Section -->
+    <section class="pain-points" id="problems">
+        <div class="section-content">
+            <div class="section-header">
+                <h2 class="section-title">Знакомые проблемы?</h2>
+                <p class="section-subtitle">Большинство малых и средних компаний сталкиваются с одними и теми же проблемами в Google Ads</p>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">💸</div>
+                    <h3 class="pain-title">Бюджет тратится впустую</h3>
+                    <p class="pain-description">Реклама работает, клики есть, но заявки не приходят. Деньги уходят на нецелевые запросы и неэффективные ключевые слова.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">📉</div>
+                    <h3 class="pain-title">Низкая конверсия</h3>
+                    <p class="pain-description">Посетители заходят на сайт, но не оставляют заявки. Стоимость лида растет, а качество падает.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">🎯</div>
+                    <h3 class="pain-title">Непонятная аналитика</h3>
+                    <p class="pain-description">Вы не понимаете, какие кампании работают, а какие сливают бюджет. Отсутствует корректная настройка отслеживания конверсий.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">⏰</div>
+                    <h3 class="pain-title">Нет времени разбираться</h3>
+                    <p class="pain-description">Google Ads требует постоянного внимания и экспертизы. Вам нужно заниматься бизнесом, а не изучать рекламные кабинеты.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="services" class="reveal">
-  <h2>Наши решения</h2>
-  <p class="section-desc">Полный цикл работы с Google Ads</p>
-  <div class="grid">
-    <div class="card">
-      <h3>🚀 Запуск</h3>
-      <ul>
-        <li>Анализ ниши</li>
-        <li>Структура аккаунта</li>
-        <li>Объявления</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>📈 Рост</h3>
-      <ul>
-        <li>A/B тесты</li>
-        <li>Оптимизация ставок</li>
-        <li>Масштабирование</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>🎯 Конверсии</h3>
-      <ul>
-        <li>Аналитика</li>
-        <li>CRO</li>
-        <li>Лендинги</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-content">
+            <div class="section-header">
+                <h2 class="section-title">Комплексные решения для вашего бизнеса</h2>
+                <p class="section-subtitle">От настройки до масштабирования — полный цикл работы с Google Ads</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3 class="service-title">Настройка с нуля</h3>
+                    <p class="service-description">Запустим эффективную рекламу под ключ за 5-7 дней</p>
+                    <ul class="service-features">
+                        <li>Анализ ниши и конкурентов</li>
+                        <li>Подбор высококонверсионных ключевых слов</li>
+                        <li>Создание структуры кампаний</li>
+                        <li>Написание продающих объявлений</li>
+                        <li>Настройка ставок и таргетинга</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">Оптимизация и масштабирование</h3>
+                    <p class="service-description">Снизим стоимость лида и увеличим количество заявок</p>
+                    <ul class="service-features">
+                        <li>Аудит текущих кампаний</li>
+                        <li>Оптимизация ставок и бюджетов</li>
+                        <li>A/B тестирование объявлений</li>
+                        <li>Работа с минус-словами</li>
+                        <li>Улучшение показателя качества</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">Посадочные страницы</h3>
+                    <p class="service-description">Создадим страницы, которые конвертируют трафик в продажи</p>
+                    <ul class="service-features">
+                        <li>CRO-оптимизированный дизайн</li>
+                        <li>Быстрая загрузка (Core Web Vitals)</li>
+                        <li>Адаптивная верстка</li>
+                        <li>Продающие тексты и оффер</li>
+                        <li>A/B тестирование элементов</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3 class="service-title">Аналитика и отслеживание</h3>
+                    <p class="service-description">Настроим корректное отслеживание всех конверсий</p>
+                    <ul class="service-features">
+                        <li>Настройка GA4 и Google Tag Manager</li>
+                        <li>Отслеживание звонков и форм</li>
+                        <li>Настройка целей и событий</li>
+                        <li>Еженедельные отчеты</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="steps-section reveal">
-  <h2>Как мы работаем</h2>
-  <div class="steps">
-    <div class="step-card"><span>1</span><h3>Анализ</h3></div>
-    <div class="step-card"><span>2</span><h3>Стратегия</h3></div>
-    <div class="step-card"><span>3</span><h3>Запуск</h3></div>
-    <div class="step-card"><span>4</span><h3>Оптимизация</h3></div>
-  </div>
-</section>
+    <!-- Process Section -->
+    <section class="process">
+        <div class="section-content">
+            <div class="section-header">
+                <h2 class="section-title">Как мы работаем</h2>
+                <p class="section-subtitle">Прозрачный процесс от анализа до результата</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Анализ</h3>
+                    <p class="step-description">Изучаем ваш бизнес, нишу, конкурентов и текущую рекламу (если есть). Определяем точки роста.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Стратегия</h3>
+                    <p class="step-description">Разрабатываем план запуска или оптимизации. Согласовываем KPI и бюджеты.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Запуск</h3>
+                    <p class="step-description">Настраиваем кампании, аналитику, посадочные страницы. Тестируем все перед запуском.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Оптимизация</h3>
+                    <p class="step-description">Ежедневно мониторим результаты, вносим корректировки, тестируем гипотезы для улучшения показателей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="audit" class="reveal">
-  <h2>Почему выбирают нас</h2>
-  <p class="section-desc">Мы отвечаем за результат, а не за отчёты</p>
-</section>
-
-<footer>© Google Ads Pro</footer>
-
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const revealOnScroll = () => {
-    const h = window.innerHeight;
-    reveals.forEach(el => {
-      if (el.getBoundingClientRect().top < h - 80) {
-        el.classList.add('active');
-      }
-    });
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
-</script>
-
-</body>
-</html>
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="section-content">
+            <div class="section-header">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                <p class="section-subtitle">Мы работаем на результат, а не на процесс</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Фокус на ROI</h3>
+                    <p class="benefit-description">Наша цель — не просто потратить бюджет, а принести вам прибыль. Мы измеряем успех в деньгах, а не в кликах.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <h3 
