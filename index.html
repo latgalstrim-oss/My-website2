@@ -1,866 +1,216 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Профессиональная настройка и оптимизация Google Ads для малого и среднего бизнеса. Увеличьте продажи и снизьте стоимость лида.">
-    <title>Google Ads для вашего бизнеса | Настройка и оптимизация рекламы</title>
-    
-    <!-- Google Tag Manager Placeholder -->
-    <script>
-        // GTM Code: Replace GTM-XXXXXXX with your container ID
-        // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        // new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        // j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        // 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        // })(window,document,'script','dataLayer','GTM-XXXXXXX');
-    </script>
-    
-    <!-- GA4 Placeholder -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        // window.dataLayer = window.dataLayer || [];
-        // function gtag(){dataLayer.push(arguments);}
-        // gtag('js', new Date());
-        // gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <style>
-        /* CSS Variables for easy customization */
-        :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary-color: #10b981;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --bg-white: #ffffff;
-            --border-color: #e5e7eb;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: var(--bg-white);
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-cta {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-primary {
-            background: var(--secondary-color);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
-        }
-
-        .cta-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid white;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .cta-secondary:hover {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        /* Trust Bar */
-        .trust-bar {
-            background: var(--bg-white);
-            padding: 2rem;
-            box-shadow: var(--shadow);
-        }
-
-        .trust-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .trust-item {
-            flex: 1;
-            min-width: 150px;
-        }
-
-        .trust-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            display: block;
-        }
-
-        .trust-label {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Pain Points Section */
-        .pain-points {
-            background: var(--bg-light);
-            padding: 4rem 2rem;
-        }
-
-        .section-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .pain-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            border-left: 4px solid #ef4444;
-        }
-
-        .pain-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .pain-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .pain-description {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 4rem 2rem;
-            background: white;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-color);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .service-description {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            color: var(--text-dark);
-        }
-
-        .service-features li::before {
-            content: "✓ ";
-            color: var(--secondary-color);
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-
-        /* Process Section */
-        .process {
-            background: var(--bg-light);
-            padding: 4rem 2rem;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .process-step {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-        }
-
-        .step-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .step-description {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            padding: 4rem 2rem;
-            background: white;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .benefit-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .benefit-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .benefit-description {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* FAQ Section */
-        .faq {
-            background: var(--bg-light);
-            padding: 4rem 2rem;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 3rem auto 0;
-        }
-
-        .faq-item {
-            background: white;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 1.5rem;
-            background: white;
-            border: none;
-            text-align: left;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: var(--bg-light);
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-answer-content {
-            padding: 0 1.5rem 1.5rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .cta-box {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-section h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            max-width: 500px;
-            margin: 2rem auto;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--secondary-color);
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #059669;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Cookie Consent (GDPR) */
-        .cookie-consent {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--text-dark);
-            color: white;
-            padding: 1.5rem;
-            display: none;
-            z-index: 9999;
-            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .cookie-consent.show {
-            display: block;
-        }
-
-        .cookie-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .cookie-text {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .cookie-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .cookie-btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .cookie-accept {
-            background: var(--secondary-color);
-            color: white;
-        }
-
-        .cookie-decline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .cta-group {
-                flex-direction: column;
-            }
-
-            .trust-content {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            nav {
-                padding: 1rem;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .nav-cta {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Loading State */
-        .loading {
-            opacity: 0.6;
-            pointer-events: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title id="page-title">Google Ads Pro</title>
+<meta name="description" id="page-description" content="">
+
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif;
+    background: #0b0b0d;
+    color: #fff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10,10,12,.9);
+    border-bottom: 1px solid #222;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.lang-switch span {
+    margin-left: 12px;
+    cursor: pointer;
+    opacity: .6;
+}
+
+.lang-switch span.active {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.hero {
+    padding: 140px 24px 100px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: .85;
+    margin-bottom: 32px;
+}
+
+.buttons a {
+    display: inline-block;
+    margin: 8px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #4f7cff;
+    color: #fff;
+}
+
+.btn-secondary {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 60px auto 0;
+    text-align: center;
+}
+
+.stat span {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #4f7cff;
+}
+
+footer {
+    padding: 40px 24px;
+    text-align: center;
+    opacity: .6;
+    font-size: 14px;
+}
+</style>
 </head>
+
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">Google Ads Pro</div>
-            <a href="#contact" class="nav-cta">Получить аудит</a>
-        </nav>
-    </header>
+<header>
+<nav>
+    <div class="logo">Google Ads Pro</div>
+    <div class="lang-switch">
+        <span data-lang="ru">RU</span>
+        <span data-lang="en">EN</span>
+        <span data-lang="de">DE</span>
+    </div>
+</nav>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content fade-in-up">
-            <h1>Превратите Google Ads из расхода в источник стабильных продаж</h1>
-            <p class="hero-subtitle">Профессиональная настройка и оптимизация рекламных кампаний для малого и среднего бизнеса в Европе и США</p>
-            <div class="cta-group">
-                <a href="#contact" class="cta-primary" onclick="trackEvent('cta_click', 'hero_primary')">Получить бесплатный аудит</a>
-                <a href="#services" class="cta-secondary">Узнать больше</a>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+    <h1 data-i18n="hero_title"></h1>
+    <p data-i18n="hero_subtitle"></p>
+    <div class="buttons">
+        <a href="#contact" class="btn-primary" data-i18n="cta_primary"></a>
+        <a href="#services" class="btn-secondary" data-i18n="cta_secondary"></a>
+    </div>
 
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <div class="trust-content">
-            <div class="trust-item">
-                <span class="trust-number">15+</span>
-                <span class="trust-label">лет опыта</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">150+</span>
-                <span class="trust-label">успешных проектов</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">-40%</span>
-                <span class="trust-label">средняя экономия бюджета</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">x2</span>
-                <span class="trust-label">рост конверсий</span>
-            </div>
-        </div>
-    </section>
+    <div class="stats">
+        <div class="stat"><span>15+</span><div data-i18n="stat_1"></div></div>
+        <div class="stat"><span>150+</span><div data-i18n="stat_2"></div></div>
+        <div class="stat"><span>-40%</span><div data-i18n="stat_3"></div></div>
+        <div class="stat"><span>x2</span><div data-i18n="stat_4"></div></div>
+    </div>
+</section>
 
-    <!-- Pain Points Section -->
-    <section class="pain-points" id="problems">
-        <div class="section-content">
-            <div class="section-header">
-                <h2 class="section-title">Знакомые проблемы?</h2>
-                <p class="section-subtitle">Большинство малых и средних компаний сталкиваются с одними и теми же проблемами в Google Ads</p>
-            </div>
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <div class="pain-icon">💸</div>
-                    <h3 class="pain-title">Бюджет тратится впустую</h3>
-                    <p class="pain-description">Реклама работает, клики есть, но заявки не приходят. Деньги уходят на нецелевые запросы и неэффективные ключевые слова.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-icon">📉</div>
-                    <h3 class="pain-title">Низкая конверсия</h3>
-                    <p class="pain-description">Посетители заходят на сайт, но не оставляют заявки. Стоимость лида растет, а качество падает.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-icon">🎯</div>
-                    <h3 class="pain-title">Непонятная аналитика</h3>
-                    <p class="pain-description">Вы не понимаете, какие кампании работают, а какие сливают бюджет. Отсутствует корректная настройка отслеживания конверсий.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-icon">⏰</div>
-                    <h3 class="pain-title">Нет времени разбираться</h3>
-                    <p class="pain-description">Google Ads требует постоянного внимания и экспертизы. Вам нужно заниматься бизнесом, а не изучать рекламные кабинеты.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>
+© 2026 Google Ads Pro
+</footer>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-content">
-            <div class="section-header">
-                <h2 class="section-title">Комплексные решения для вашего бизнеса</h2>
-                <p class="section-subtitle">От настройки до масштабирования — полный цикл работы с Google Ads</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3 class="service-title">Настройка с нуля</h3>
-                    <p class="service-description">Запустим эффективную рекламу под ключ за 5-7 дней</p>
-                    <ul class="service-features">
-                        <li>Анализ ниши и конкурентов</li>
-                        <li>Подбор высококонверсионных ключевых слов</li>
-                        <li>Создание структуры кампаний</li>
-                        <li>Написание продающих объявлений</li>
-                        <li>Настройка ставок и таргетинга</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3 class="service-title">Оптимизация и масштабирование</h3>
-                    <p class="service-description">Снизим стоимость лида и увеличим количество заявок</p>
-                    <ul class="service-features">
-                        <li>Аудит текущих кампаний</li>
-                        <li>Оптимизация ставок и бюджетов</li>
-                        <li>A/B тестирование объявлений</li>
-                        <li>Работа с минус-словами</li>
-                        <li>Улучшение показателя качества</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3 class="service-title">Посадочные страницы</h3>
-                    <p class="service-description">Создадим страницы, которые конвертируют трафик в продажи</p>
-                    <ul class="service-features">
-                        <li>CRO-оптимизированный дизайн</li>
-                        <li>Быстрая загрузка (Core Web Vitals)</li>
-                        <li>Адаптивная верстка</li>
-                        <li>Продающие тексты и оффер</li>
-                        <li>A/B тестирование элементов</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3 class="service-title">Аналитика и отслеживание</h3>
-                    <p class="service-description">Настроим корректное отслеживание всех конверсий</p>
-                    <ul class="service-features">
-                        <li>Настройка GA4 и Google Tag Manager</li>
-                        <li>Отслеживание звонков и форм</li>
-                        <li>Настройка целей и событий</li>
-                        <li>Еженедельные отчеты</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+const translations = {
+ru: {
+title: "Google Ads — больше заявок",
+description: "Профессиональная настройка и оптимизация Google Ads",
+hero_title: "Больше заявок из Google Ads",
+hero_subtitle: "Настраиваем рекламу под результат, а не под клики",
+cta_primary: "Получить аудит",
+cta_secondary: "Узнать больше",
+stat_1: "лет опыта",
+stat_2: "проектов",
+stat_3: "экономия бюджета",
+stat_4: "рост заявок"
+},
+en: {
+title: "Google Ads — More Leads",
+description: "Professional Google Ads setup and optimization",
+hero_title: "More Leads from Google Ads",
+hero_subtitle: "We optimize campaigns for results, not clicks",
+cta_primary: "Get Free Audit",
+cta_secondary: "Learn More",
+stat_1: "years of experience",
+stat_2: "projects",
+stat_3: "budget savings",
+stat_4: "lead growth"
+},
+de: {
+title: "Google Ads — Mehr Anfragen",
+description: "Professionelle Google Ads Betreuung und Optimierung",
+hero_title: "Mehr Anfragen über Google Ads",
+hero_subtitle: "Wir optimieren Werbung für Ergebnisse, nicht Klicks",
+cta_primary: "Kostenlosen Audit erhalten",
+cta_secondary: "Mehr erfahren",
+stat_1: "Jahre Erfahrung",
+stat_2: "Projekte",
+stat_3: "Budgeteinsparung",
+stat_4: "mehr Anfragen"
+}
+};
 
-    <!-- Process Section -->
-    <section class="process">
-        <div class="section-content">
-            <div class="section-header">
-                <h2 class="section-title">Как мы работаем</h2>
-                <p class="section-subtitle">Прозрачный процесс от анализа до результата</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Анализ</h3>
-                    <p class="step-description">Изучаем ваш бизнес, нишу, конкурентов и текущую рекламу (если есть). Определяем точки роста.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Стратегия</h3>
-                    <p class="step-description">Разрабатываем план запуска или оптимизации. Согласовываем KPI и бюджеты.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Запуск</h3>
-                    <p class="step-description">Настраиваем кампании, аналитику, посадочные страницы. Тестируем все перед запуском.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Оптимизация</h3>
-                    <p class="step-description">Ежедневно мониторим результаты, вносим корректировки, тестируем гипотезы для улучшения показателей.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+function setLang(lang) {
+document.documentElement.lang = lang;
+localStorage.setItem("lang", lang);
 
-    <!-- Benefits Section -->
-    <section class="benefits">
-        <div class="section-content">
-            <div class="section-header">
-                <h2 class="section-title">Почему выбирают нас</h2>
-                <p class="section-subtitle">Мы работаем на результат, а не на процесс</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3 class="benefit-title">Фокус на ROI</h3>
-                    <p class="benefit-description">Наша цель — не просто потратить бюджет, а принести вам прибыль. Мы измеряем успех в деньгах, а не в кликах.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔍</div>
-                    <h3 
+document.getElementById("page-title").innerText = translations[lang].title;
+document.getElementById("page-description").setAttribute("content", translations[lang].description);
+
+document.querySelectorAll("[data-i18n]").forEach(el => {
+const key = el.getAttribute("data-i18n");
+el.innerText = translations[lang][key];
+});
+
+document.querySelectorAll(".lang-switch span").forEach(s => {
+s.classList.toggle("active", s.dataset.lang === lang);
+});
+}
+
+const savedLang = localStorage.getItem("lang");
+const browserLang = navigator.language.slice(0,2);
+const defaultLang = savedLang || (translations[browserLang] ? browserLang : "en");
+
+setLang(defaultLang);
+
+document.querySelectorAll(".lang-switch span").forEach(btn => {
+btn.addEventListener("click", () => setLang(btn.dataset.lang));
+});
+</script>
+
+</body>
+</html>
