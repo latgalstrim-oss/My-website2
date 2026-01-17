@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Google Ads Pro — Mehr Anfragen</title>
+<meta name="description" content="Ergebnisorientiertes Google Ads Management. Mehr Leads, geringere Kosten, klare Daten.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="alternate" hreflang="ru" href="index.html">
+<link rel="alternate" hreflang="en" href="en.html">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{font-family:Inter,Arial,sans-serif;background:#0b0b0c;color:#fff}
+section{scroll-snap-align:start;padding:96px 20px;max-width:1100px;margin:auto}
+header{position:sticky;top:0;background:#0b0b0c;border-bottom:1px solid #222}
+nav{display:flex;justify-content:space-between;padding:16px 20px;max-width:1100px;margin:auto}
+.lang a{color:#888;margin-left:12px;text-decoration:none}
+.lang a.active{color:#fff;font-weight:600}
+.hero h1{font-size:48px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:40px}
+.card{background:#151517;padding:28px;border-radius:16px;transition:.3s}
+.card:hover{transform:translateY(-6px);background:#1d1d20}
+.reveal{opacity:0;transform:translateY(40px);transition:1s}
+.reveal.active{opacity:1;transform:none}
+footer{text-align:center;padding:40px;color:#777}
+@media(max-width:600px){.hero h1{font-size:34px}}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<strong>Google Ads Pro</strong>
+<div class="lang">
+<a href="index.html">RU</a>
+<a href="en.html">EN</a>
+<a class="active" href="de.html">DE</a>
+</div>
+</nav>
+</header>
+
+<section class="hero reveal">
+<h1>Mehr Anfragen mit Google Ads</h1>
+<p>Werbung mit Fokus auf Ergebnisse</p>
+</section>
+
+<section class="reveal">
+<h2>Typische Probleme</h2>
+<div class="grid">
+<div class="card">Budget wird verschwendet</div>
+<div class="card">Niedrige Conversion</div>
+<div class="card">Keine Transparenz</div>
+<div class="card">Zu wenig Zeit</div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Warum wir</h2>
+<p>Wir liefern messbare Resultate</p>
+</section>
+
+<footer>© Google Ads Pro</footer>
+
+<script>
+const r=document.querySelectorAll('.reveal');
+const onScroll=()=>r.forEach(e=>{
+if(e.getBoundingClientRect().top<window.innerHeight-80)e.classList.add('active')
+});
+window.addEventListener('scroll',onScroll);onScroll();
+</script>
+
+</body>
+</html>
