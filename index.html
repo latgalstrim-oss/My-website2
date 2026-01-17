@@ -1,77 +1,315 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Google Ads Pro — рост заявок</title>
-<meta name="description" content="Настройка и оптимизация Google Ads. Больше заявок, ниже стоимость, прозрачная аналитика.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Google Ads Pro — больше заявок, меньше расходов</title>
+  <meta name="description" content="Профессиональная настройка и оптимизация Google Ads. Больше заявок, ниже стоимость лида. Работаем в Европе и США." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="alternate" hreflang="en" href="en.html">
-<link rel="alternate" hreflang="de" href="de.html">
+  <style>
+    /* ===== RESET ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y proximity;
+    }
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #0b0b0c;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-snap-type:y proximity}
-body{font-family:Inter,Arial,sans-serif;background:#0b0b0c;color:#fff}
-section{scroll-snap-align:start;padding:96px 20px;max-width:1100px;margin:auto}
-h1,h2{font-weight:700;letter-spacing:-.02em}
-p{opacity:.85;line-height:1.6}
-header{position:sticky;top:0;background:#0b0b0c;z-index:10;border-bottom:1px solid #222}
-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1100px;margin:auto}
-.lang a{color:#888;text-decoration:none;margin-left:12px}
-.lang a.active{color:#fff;font-weight:600}
-.hero h1{font-size:48px;margin-bottom:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:40px}
-.card{background:#151517;padding:28px;border-radius:16px;transition:.3s}
-.card:hover{transform:translateY(-6px);background:#1d1d20}
-.reveal{opacity:0;transform:translateY(40px);transition:1s}
-.reveal.active{opacity:1;transform:none}
-footer{text-align:center;padding:40px;color:#777}
-@media(max-width:600px){.hero h1{font-size:34px}}
-</style>
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(11,11,12,0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .logo { font-weight: 700; }
+    .langs a {
+      margin-left: 14px;
+      opacity: 0.6;
+      font-weight: 600;
+    }
+    .langs a.active {
+      opacity: 1;
+      border-bottom: 2px solid #6d6adb;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      scroll-snap-align: start;
+      min-height: 90vh;
+      padding: 120px 40px;
+      background: radial-gradient(80% 80% at 50% 20%, #1a1a2e 0%, #0b0b0c 60%);
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      max-width: 900px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      max-width: 640px;
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 40px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 14px 26px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6d6adb, #7b5fc0);
+    }
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(109,106,219,0.35);
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      scroll-snap-align: start;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+      gap: 30px;
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .stat strong {
+      font-size: 32px;
+      color: #6d6adb;
+    }
+    .stat span {
+      display: block;
+      opacity: 0.7;
+      margin-top: 6px;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      scroll-snap-align: start;
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      text-align: center;
+      opacity: 0.7;
+      max-width: 720px;
+      margin: 0 auto 60px;
+    }
+
+    /* ===== CARDS ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 30px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border-radius: 18px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .card ul {
+      padding-left: 18px;
+      margin-top: 12px;
+    }
+    .card li {
+      margin-bottom: 8px;
+      opacity: 0.85;
+    }
+
+    /* ===== STEPS ===== */
+    .steps-section {
+      scroll-snap-align: start;
+      background: linear-gradient(135deg, #6d6adb, #7b5fc0);
+      text-align: center;
+      padding: 120px 40px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .step-card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 30px 20px;
+      backdrop-filter: blur(6px);
+    }
+    .step-card span {
+      display: inline-block;
+      width: 46px;
+      height: 46px;
+      line-height: 46px;
+      border-radius: 50%;
+      background: #fff;
+      color: #6d6adb;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 40px;
+      text-align: center;
+      opacity: 0.5;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all .7s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; }
+      .hero { padding: 100px 20px; }
+      section { padding: 80px 20px; }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<nav>
-<strong>Google Ads Pro</strong>
-<div class="lang">
-<a class="active" href="index.html">RU</a>
-<a href="en.html">EN</a>
-<a href="de.html">DE</a>
-</div>
-</nav>
+  <div class="logo">Google Ads Pro</div>
+  <div class="langs">
+    <a href="index.html" class="active">RU</a>
+    <a href="en.html">EN</a>
+    <a href="de.html">DE</a>
+  </div>
 </header>
 
 <section class="hero reveal">
-<h1>Больше заявок из Google Ads</h1>
-<p>Настраиваем рекламу под результат, а не клики</p>
+  <h1>Больше заявок из Google Ads</h1>
+  <p>Настраиваем рекламу под результат, а не клики. Работаем с малым и средним бизнесом в Европе и США.</p>
+  <div class="hero-buttons">
+    <a href="#audit" class="btn btn-primary">Получить аудит</a>
+    <a href="#services" class="btn btn-secondary">Узнать больше</a>
+  </div>
 </section>
 
-<section class="reveal">
-<h2>Знакомые проблемы?</h2>
-<div class="grid">
-<div class="card">Бюджет уходит впустую</div>
-<div class="card">Низкая конверсия</div>
-<div class="card">Нет аналитики</div>
-<div class="card">Нет времени разбираться</div>
+<div class="stats reveal">
+  <div class="stat"><strong>15+</strong><span>лет опыта</span></div>
+  <div class="stat"><strong>150+</strong><span>проектов</span></div>
+  <div class="stat"><strong>-40%</strong><span>экономия бюджета</span></div>
+  <div class="stat"><strong>2x</strong><span>рост заявок</span></div>
 </div>
-</section>
 
 <section class="reveal">
-<h2>Почему выбирают нас</h2>
-<p>Мы отвечаем за результат и работаем прозрачно</p>
+  <h2>Знакомые проблемы?</h2>
+  <p class="section-desc">Мы видим их каждый день у 9 из 10 клиентов</p>
+  <div class="grid">
+    <div class="card"><h3>💸 Бюджет уходит впустую</h3><p>Нецелевые запросы и слабая структура.</p></div>
+    <div class="card"><h3>📉 Низкая конверсия</h3><p>Дорого, а заявок мало.</p></div>
+    <div class="card"><h3>📊 Нет аналитики</h3><p>Непонятно, что реально работает.</p></div>
+    <div class="card"><h3>⏰ Нет времени</h3><p>Бизнес важнее рекламных кабинетов.</p></div>
+  </div>
+</section>
+
+<section id="services" class="reveal">
+  <h2>Наши решения</h2>
+  <p class="section-desc">Полный цикл работы с Google Ads</p>
+  <div class="grid">
+    <div class="card">
+      <h3>🚀 Запуск</h3>
+      <ul>
+        <li>Анализ ниши</li>
+        <li>Структура аккаунта</li>
+        <li>Объявления</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📈 Рост</h3>
+      <ul>
+        <li>A/B тесты</li>
+        <li>Оптимизация ставок</li>
+        <li>Масштабирование</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🎯 Конверсии</h3>
+      <ul>
+        <li>Аналитика</li>
+        <li>CRO</li>
+        <li>Лендинги</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="steps-section reveal">
+  <h2>Как мы работаем</h2>
+  <div class="steps">
+    <div class="step-card"><span>1</span><h3>Анализ</h3></div>
+    <div class="step-card"><span>2</span><h3>Стратегия</h3></div>
+    <div class="step-card"><span>3</span><h3>Запуск</h3></div>
+    <div class="step-card"><span>4</span><h3>Оптимизация</h3></div>
+  </div>
+</section>
+
+<section id="audit" class="reveal">
+  <h2>Почему выбирают нас</h2>
+  <p class="section-desc">Мы отвечаем за результат, а не за отчёты</p>
 </section>
 
 <footer>© Google Ads Pro</footer>
 
 <script>
-const r=document.querySelectorAll('.reveal');
-const onScroll=()=>r.forEach(e=>{
-if(e.getBoundingClientRect().top<window.innerHeight-80)e.classList.add('active')
-});
-window.addEventListener('scroll',onScroll);onScroll();
+  const reveals = document.querySelectorAll('.reveal');
+  const revealOnScroll = () => {
+    const h = window.innerHeight;
+    reveals.forEach(el => {
+      if (el.getBoundingClientRect().top < h - 80) {
+        el.classList.add('active');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
 </script>
 
 </body>
