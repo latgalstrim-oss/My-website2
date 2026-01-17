@@ -1,76 +1,177 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Google Ads Pro — Mehr Anfragen</title>
-<meta name="description" content="Ergebnisorientiertes Google Ads Management. Mehr Leads, geringere Kosten, klare Daten.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Mehr Anfragen über Google Ads | Google Ads Pro</title>
 
-<link rel="alternate" hreflang="ru" href="index.html">
-<link rel="alternate" hreflang="en" href="en.html">
+  <!-- SEO -->
+  <meta name="description" content="Mehr qualifizierte Anfragen durch Google Ads. Wir richten Werbung auf Ergebnisse aus, nicht auf Klicks." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-snap-type:y proximity}
-body{font-family:Inter,Arial,sans-serif;background:#0b0b0c;color:#fff}
-section{scroll-snap-align:start;padding:96px 20px;max-width:1100px;margin:auto}
-header{position:sticky;top:0;background:#0b0b0c;border-bottom:1px solid #222}
-nav{display:flex;justify-content:space-between;padding:16px 20px;max-width:1100px;margin:auto}
-.lang a{color:#888;margin-left:12px;text-decoration:none}
-.lang a.active{color:#fff;font-weight:600}
-.hero h1{font-size:48px;margin-bottom:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:40px}
-.card{background:#151517;padding:28px;border-radius:16px;transition:.3s}
-.card:hover{transform:translateY(-6px);background:#1d1d20}
-.reveal{opacity:0;transform:translateY(40px);transition:1s}
-.reveal.active{opacity:1;transform:none}
-footer{text-align:center;padding:40px;color:#777}
-@media(max-width:600px){.hero h1{font-size:34px}}
-</style>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mehr Anfragen über Google Ads" />
+  <meta property="og:description" content="Ergebnisorientiertes Google-Ads-Management für Ihr Unternehmen." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #141414;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+      --accent: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(1200px 600px at 30% -10%, #1a1a1a 0%, #0b0b0b 60%);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11,11,11,0.8);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .lang a {
+      margin-left: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .lang a.active {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 96px 24px 80px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      max-width: 760px;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 72px 24px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #161616, #101010);
+      border: 1px solid #1f1f1f;
+      border-radius: 14px;
+      padding: 22px;
+      color: var(--text);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+
+    footer {
+      border-top: 1px solid #1f1f1f;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-<nav>
-<strong>Google Ads Pro</strong>
-<div class="lang">
-<a href="index.html">RU</a>
-<a href="en.html">EN</a>
-<a class="active" href="de.html">DE</a>
-</div>
-</nav>
+  <div class="container header-inner">
+    <div class="logo">Google Ads Pro</div>
+    <div class="lang">
+      <a href="index.html">RU</a>
+      <a href="en.html">EN</a>
+      <a href="de.html" class="active">DE</a>
+    </div>
+  </div>
 </header>
 
-<section class="hero reveal">
-<h1>Mehr Anfragen mit Google Ads</h1>
-<p>Werbung mit Fokus auf Ergebnisse</p>
-</section>
+<main>
+  <section class="hero container">
+    <h1>Mehr qualifizierte Anfragen über Google Ads</h1>
+    <p class="subtitle">
+      Wir richten Google-Ads-Kampagnen auf echte Geschäftsergebnisse aus — nicht nur auf Klicks.
+    </p>
+  </section>
 
-<section class="reveal">
-<h2>Typische Probleme</h2>
-<div class="grid">
-<div class="card">Budget wird verschwendet</div>
-<div class="card">Niedrige Conversion</div>
-<div class="card">Keine Transparenz</div>
-<div class="card">Zu wenig Zeit</div>
-</div>
-</section>
+  <section class="container">
+    <h2>Kommen Ihnen diese Probleme bekannt vor?</h2>
+    <div class="cards">
+      <div class="card">Ihr Werbebudget verpufft</div>
+      <div class="card">Niedrige Conversion-Rate</div>
+      <div class="card">Keine klare Analyse</div>
+      <div class="card">Keine Zeit, sich selbst darum zu kümmern</div>
+    </div>
+  </section>
+</main>
 
-<section class="reveal">
-<h2>Warum wir</h2>
-<p>Wir liefern messbare Resultate</p>
-</section>
-
-<footer>© Google Ads Pro</footer>
-
-<script>
-const r=document.querySelectorAll('.reveal');
-const onScroll=()=>r.forEach(e=>{
-if(e.getBoundingClientRect().top<window.innerHeight-80)e.classList.add('active')
-});
-window.addEventListener('scroll',onScroll);onScroll();
-</script>
+<footer class="container">
+  © Google Ads Pro — Performance Marketing
+</footer>
 
 </body>
 </html>
